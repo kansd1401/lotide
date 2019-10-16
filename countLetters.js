@@ -4,7 +4,6 @@ const assertArrayEqual = function(actual, expected) {
   } else {
     console.log(`🛑🛑🛑 The 2 arrays are not equal: ${actual} !== ${expected}`);
   }
-  return;
 };
 
 const eqArrays = function(arr1, arr2){
@@ -47,3 +46,4 @@ assertArrayEqual(countLetters("lighthouse in the house"),{
   e: 3,
   n: 1,
 });
+console.log(countLetters("lighthouse in the house"))

@@ -1,25 +1,9 @@
-//const assertArrayEqual = function(actual, expected) {
-  //if(!eqArrays(Object.keys(actual),Object.keys(expected))){
-    //console.log(`🛑🛑🛑 The 2 arrays are not equal: ${actual} !== ${expected}`);
-    //return;
-  //}
-  //var keys = Object.keys(actual);
-  //for(var i of keys){
-    //if(eqArrays(actual[i]!==expected[i])){
-      //console.log(`🛑🛑🛑 The 2 arrays are not equal: ${actual} !== ${expected}`);
-      //return;
-    //}
-  //}
-  //console.log(`✅✅✅ The 2 arrays are equal: ${actual} === ${expected}`);
-//};
-
 const assertArrayEqual = function(actual, expected) {
   if (eqArrays(actual,expected)) {
     console.log(`✅✅✅ The 2 arrays are equal: ${actual} === ${expected}`);
   } else {
     console.log(`🛑🛑🛑 The 2 arrays are not equal: ${actual} !== ${expected}`);
   }
-  return;
 };
 
 const eqArrays = function(arr1, arr2){
