@@ -15,7 +15,3 @@ const tail = function(arr) {
   return newArr;
   
 };
-
-const words = [];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 0);
