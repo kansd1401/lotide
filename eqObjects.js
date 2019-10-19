@@ -18,12 +18,17 @@ const eqObjects = function(obj1, obj2) {
   return true;
 };
 
-const eqArrays = function(arr1,arr2){
+const eqArrays = function(arr1, arr2){
   if (arr1.length !== arr2.length){
     return false;
   }
-  for(var i=0;i<arr1.length;i++){
-    if(arr1[i] !== arr2[i]){
+  for(var i in arr1){
+    if(Array.isArray(arr1[i]) && Array.isArray(arr2[i])){
+      if(!eqArrays(arr1[i],arr2[i])){
+        return false;
+      }
+    }
+    else if(arr1[i] !== arr2[i]){
       return false;
     }
   }
@@ -31,6 +36,3 @@ const eqArrays = function(arr1,arr2){
 }
 
 
-console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })) // => true
-console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })) // => false
-console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })) // => false
